@@ -1,10 +1,9 @@
 #include <Adafruit_NeoPixel.h>
 
 #define PIN            6
-#define NUMPIXELS      40
 #define PIXELSPERROW   8 //Column
 #define ROWS   5
-
+#define NUMPIXELS      40 // ROWS * PIXELSPERROW
 
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
@@ -13,9 +12,9 @@ int pixelLife[NUMPIXELS];
 int pixelLifeNext[NUMPIXELS];
 int changes = 0;
 int changesBefore = 0, count = 0;
+
 uint32_t life = pixels.Color(30,0,0);
 uint32_t dead = pixels.Color(0,0,10);
-uint32_t green = pixels.Color(0,20,0);
 
 void setup() {
   randomSeed(analogRead(0));
