@@ -19,6 +19,7 @@ void setup() {
 }
 
 void loop() {
+  delay(400);
   showNextStep();
   if (changesBefore == changes) {
     count++;
